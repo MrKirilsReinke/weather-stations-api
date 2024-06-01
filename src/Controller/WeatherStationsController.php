@@ -21,6 +21,10 @@ class WeatherStationsController extends AbstractController
     public function getWeatherStationByStationId(string $stationId, WeatherStationsService $weatherStationsService): JsonResponse
     {
         $weatherStation = $weatherStationsService->getWeatherStationById($stationId);
+        if ($weatherStation === null) {
+            return $this->json(['message'=>'Station with a provided id not found']);
+        }
+
         return $this->json($weatherStation);
     }
 }

@@ -4,7 +4,6 @@ namespace App\Service;
 
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-
 class WeatherStationsService
 {
     public function __construct(
@@ -65,8 +64,9 @@ class WeatherStationsService
         if ($content['result']['total'] === 1) {
           return $content['result']['records'][0];
 
-        } else { 
-
+        } else if ($content['result']['total'] === 0 ){ 
+          return null;
+        } else {
           return $content;
         }
       } catch(\Exception $e) {
