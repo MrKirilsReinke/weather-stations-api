@@ -1,0 +1,9 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: REST API which provide info about weather stations in Latvia
+            description: This API provides access to weather station data, allowing retrieval of station lists and specific station details. It is designed to deliver real-time data efficiently and securely by using a preshared authentication Bearer Token.
+            version: 1.0.0
+    areas: # to filter documented areas
+        path_patterns:
+            - ^/api(?!/doc$) # Accepts routes under /api except /api/doc
