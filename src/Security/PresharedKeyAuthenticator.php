@@ -46,7 +46,6 @@ class PresharedKeyAuthenticator extends AbstractAuthenticator
       return true;
     } else 
     {
-      error_log("Expected token: " . $this->presharedKey . ", Received token: " . $token);
       return false;
     }
   }
